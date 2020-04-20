@@ -14,14 +14,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.use( require('./routes/usuario'));
+//Configuracion global de rutas
+app.use(require('./routes/index'));
 
 
 
 mongoose.connection.openUri(process.env.URLDB,{
     useNewUrlParser: true,
     useCreateIndex : true,//Quita el warning: DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false //Quita el otro warning de la funcion findAndUpdate
   },(err, res) => {
     if( err ) throw err;
 
