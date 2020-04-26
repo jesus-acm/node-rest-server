@@ -89,7 +89,7 @@ app.put('/categoria/:id', verificaToken, (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    mensaje: `La categoría con el ${ id } no existe.`
+                    message: `La categoría con el ${ id } no existe.`
                 }
             });
         }
@@ -118,7 +118,7 @@ app.delete('/categoria/:id', [verificaToken, verificaAdminRole], (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    mensaje: `La categoría con el ${ id } no existe.`
+                    message: `La categoría con el ${ id } no existe.`
                 }
             });
         }

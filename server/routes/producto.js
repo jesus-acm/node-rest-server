@@ -34,7 +34,7 @@ app.get('/productos', verificaToken, (req, res) => {
 
                     res.json({
                         ok: true,
-                        producto: productos,
+                        productos: productos,
                         total: count
                     });
                 });
@@ -64,7 +64,7 @@ app.get('/productos/:id', verificaToken, (req, res) => {
                     return res.status(404).json({
                         ok: false,
                         err: {
-                            mensaje: `El producto con el id=${ id } no existe.`
+                            message: `El producto con el id=${ id } no existe.`
                         }
                     })
                 }
@@ -154,7 +154,7 @@ app.put('/productos/:id', verificaToken, (req, res) => {
             return res.status(404).json({
                 ok: false,
                 err: {
-                    mensaje: `El producto con el id=${ id } no existe.`
+                    message: `El producto con el id=${ id } no existe.`
                 }
             });
         }else{
@@ -185,14 +185,14 @@ app.delete('/productos/:id', verificaToken, (req, res) => {
             return res.status(404).json({
                 ok: false,
                 err: {
-                    mensaje: `El producto con el id=${ id } no existe.`
+                    message: `El producto con el id=${ id } no existe.`
                 }
             });
         }else{
             return res.json({
                 ok: true,
                 producto: productoBorrado,
-                mensaje: 'Producto borrado'
+                message: 'Producto borrado'
             });
         }
     });

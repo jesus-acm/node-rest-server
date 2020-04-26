@@ -1,6 +1,6 @@
-## Servidor incial
+## Servidor inicial
 
-El proyecto contiene el llamado las funcionalidades CRUD.
+El proyecto contiene el llamado de las funcionalidades CRUD.
 
 Ejecutar el siguiente comando al incio
 ```
